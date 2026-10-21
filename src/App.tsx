@@ -1,4 +1,21 @@
 import { useEffect, useState } from 'react'
+import {
+  Atom,
+  BookOpen,
+  Brain,
+  BriefcaseMedical,
+  Brush,
+  ChefHat,
+  Clapperboard,
+  Cpu,
+  CpuAi,
+  EighthNotes,
+  Gamepad2,
+  PawPrint,
+  Shirt,
+  Sigma,
+  type LucideIcon,
+} from 'lucide-react'
 import profileImage from './assets/profile-photo.jpeg'
 import './App.css'
 
@@ -88,19 +105,21 @@ const skills = [
   'Bash',
 ]
 
-const interests: Array<{ title: Record<Language, string>; text: Record<Language, string> }> = [
-  { title: { pl: 'Technologia', en: 'Technology' }, text: { pl: 'Interesuje mnie to, co na bieżąco rozwija się w świecie technologii.', en: 'I am interested in how technology evolves over time.' } },
-  { title: { pl: 'Fizyka', en: 'Physics' }, text: { pl: 'Lubię pogłębiać wiedzę z dziedziny fizyki, ponieważ cenię sobie zrozumienie zasad działania świata.', en: 'I enjoy exploring the principles of physics and understanding how the world works.' } },
-  { title: { pl: 'Medycyna', en: 'Medicine' }, text: { pl: 'Jestem zainteresowana rozwijaniem wiedzy w dziedzinie medycyny, szczególnie w kontekście wsparcia pracowników ochrony zdrowia w celu redukowania wypalenia zawodowego wśród medyków i przyspieszenia diagnostyki.', en: 'I am interested in developing knowledge in the field of medicine, particularly in the context of supporting healthcare workers to reduce occupational burnout among physicians and accelerate diagnosis.' } },
-  { title: { pl: 'Matematyka', en: 'Mathematics' }, text: { pl: 'Lubię rozwiązywać zagadnienia matematyczne i cenię sobie logiczne myślenie.', en: 'I enjoy solving mathematical problems and value logical thinking.' } },
-  { title: { pl: 'Sztuczna inteligencja', en: 'Artificial Intelligence'}, text: { pl: 'Sztuczna inteligencja to obszar, który mnie fascynuje i w którym chcę się rozwijać.', en: 'Artificial intelligence is an area that fascinates me and in which I want to develop.' } },
-  { title: { pl: 'Sztuka', en: 'Art' }, text: { pl: 'Cenię sobie sztukę i lubię odwiedzać galerie sztuki, aby poszerzać swoje horyzonty i inspirować się twórczością artystów. Moimi ulubionymi nurtami w sztuce są surrealizm i ekspresjonizm.', en: 'I value art and enjoy visiting art galleries to broaden my horizons and be inspired by the creativity of artists. My favorite movements in art are surrealism and expressionism.' } },
-  { title: { pl: 'Książki', en: 'Books'}, text: { pl: 'Lubię rozwijać się i relaksować poprzez czytanie książek. Najbardziej lubię książki psychologiczne, medyczne i fantasy. Moje ulubione książki to seria Diuny i trylogia Władcy Pierścieni.', en: 'I like to develop and relax through reading books. I mostly like psychological, medical and fantasy books. My favorite books are the Diuny series and the Lord of the Rings trilogy. ' } },
-  { title: { pl: 'Muzyka', en: 'Music'}, text: { pl: 'W wolnym czasie lubię słuchać muzyki, szczególnie metalowej i elektronicznej, w przeszłości grałam na gitarze, pianinie i doskonaliłam swoje umiejętności wokalne, również w nurcie wokalu ekstremalnego.', en: 'In my free time, I enjoy listening to music, especially metal and electronic music. In the past, I played the guitar and piano and honed my vocal skills, including in the extreme vocal genre.' } },
-  { title: { pl: 'Robienie na drutach i szydełkowanie', en: 'Knitting and crocheting'}, text: { pl: 'W trakcie skupienia się na pracy lub nauce lubię zająć ręce czymś manualnym, dlatego lubię robić na drutach i szydełkować. Ułatwia mi to skupienie i przyspiesza pracę.', en: 'While focusing on work or study, I like to keep my hands busy with something manual, which is why I enjoy knitting and crocheting. It helps me concentrate and speeds up my work.' } }, 
-  { title: { pl: 'Kino', en: 'Cinema'}, text: { pl: 'Wraz ze znajomymi lubię oglądać filmy, od wielkich, masowych produkcji, po filmy mmniejszych i niezależnych twórców.', en: 'I like to watch movies with friends, from big, mass-produced films to smaller, independent productions.'} },
-  { title: { pl: 'Behawioryzm zwierzęcy', en: 'Animal behaviorism'}, text: { pl: 'Interesuję się behawioryzmem zwierzęcym i lubię obserwować zachowania zwierząt, które wykazują ich stan emocjonalny. Poza tym lubię pracować ze zwierzętami domowymi i pomagać im w nauce nowych zachowań i panowania nad emocjami.', en: 'I am interested in animal behaviorism and enjoy observing the behaviors of animals that reflect their emotional state. Additionally, I enjoy working with domestic animals and helping them learn new behaviors and manage their emotions.'} },
-  { title: { pl: 'Gry Komputerowe', en: 'Computer Games'}, text: { pl: 'W wolnych chwilach lubię grać w gry komputerowe i doceniam je jako formę relaksu i rozrywki. Najwięcej gram w gry RPG, MOBA i symulatory.', en: 'I like to play computer games in my free time and value them as a form of relaxation and entertainment. I mostly play RPG, MOBA, and simulation games.'} }
+const interests: Array<{ icon: LucideIcon; title: Record<Language, string>; text: Record<Language, string> }> = [
+  { icon: Cpu, title: { pl: 'Technologia', en: 'Technology' }, text: { pl: 'Interesuje mnie to, co na bieżąco rozwija się w świecie technologii.', en: 'I am interested in how technology evolves over time.' } },
+  { icon: Atom, title: { pl: 'Fizyka', en: 'Physics' }, text: { pl: 'Lubię pogłębiać wiedzę z dziedziny fizyki, ponieważ cenię sobie zrozumienie zasad działania świata.', en: 'I enjoy exploring the principles of physics and understanding how the world works.' } },
+  { icon: BriefcaseMedical, title: { pl: 'Medycyna', en: 'Medicine' }, text: { pl: 'Jestem zainteresowana rozwijaniem wiedzy w dziedzinie medycyny, szczególnie w kontekście wsparcia pracowników ochrony zdrowia w celu redukowania wypalenia zawodowego wśród medyków i przyspieszenia diagnostyki.', en: 'I am interested in developing knowledge in the field of medicine, particularly in the context of supporting healthcare workers to reduce occupational burnout among physicians and accelerate diagnosis.' } },
+  { icon: Sigma, title: { pl: 'Matematyka', en: 'Mathematics' }, text: { pl: 'Lubię rozwiązywać zagadnienia matematyczne i cenię sobie logiczne myślenie.', en: 'I enjoy solving mathematical problems and value logical thinking.' } },
+  { icon: CpuAi, title: { pl: 'Sztuczna inteligencja', en: 'Artificial Intelligence'}, text: { pl: 'Sztuczna inteligencja to obszar, który mnie fascynuje i w którym chcę się rozwijać.', en: 'Artificial intelligence is an area that fascinates me and in which I want to develop.' } },
+  { icon: Brush, title: { pl: 'Sztuka', en: 'Art' }, text: { pl: 'Cenię sobie sztukę i lubię odwiedzać galerie sztuki, aby poszerzać swoje horyzonty i inspirować się twórczością artystów. Moimi ulubionymi nurtami w sztuce są surrealizm i ekspresjonizm.', en: 'I value art and enjoy visiting art galleries to broaden my horizons and be inspired by the creativity of artists. My favorite movements in art are surrealism and expressionism.' } },
+  { icon: BookOpen, title: { pl: 'Książki', en: 'Books'}, text: { pl: 'Lubię rozwijać się i relaksować poprzez czytanie książek. Najbardziej lubię książki psychologiczne, medyczne i fantasy. Moje ulubione książki to seria Diuny i trylogia Władcy Pierścieni.', en: 'I like to develop and relax through reading books. I mostly like psychological, medical and fantasy books. My favorite books are the Diuny series and the Lord of the Rings trilogy. ' } },
+  { icon: EighthNotes, title: { pl: 'Muzyka', en: 'Music'}, text: { pl: 'W wolnym czasie lubię słuchać muzyki, szczególnie metalowej i elektronicznej, w przeszłości grałam na gitarze, pianinie i doskonaliłam swoje umiejętności wokalne, również w nurcie wokalu ekstremalnego.', en: 'In my free time, I enjoy listening to music, especially metal and electronic music. In the past, I played the guitar and piano and honed my vocal skills, including in the extreme vocal genre.' } },
+  { icon: Shirt, title: { pl: 'Robienie na drutach i szydełkowanie', en: 'Knitting and crocheting'}, text: { pl: 'W trakcie skupienia się na pracy lub nauce lubię zająć ręce czymś manualnym, dlatego lubię robić na drutach i szydełkować. Ułatwia mi to skupienie i przyspiesza pracę.', en: 'While focusing on work or study, I like to keep my hands busy with something manual, which is why I enjoy knitting and crocheting. It helps me concentrate and speeds up my work.' } }, 
+  { icon: Clapperboard, title: { pl: 'Kino', en: 'Cinema'}, text: { pl: 'Wraz ze znajomymi lubię oglądać filmy, od wielkich, masowych produkcji, po filmy mmniejszych i niezależnych twórców.', en: 'I like to watch movies with friends, from big, mass-produced films to smaller, independent productions.'} },
+  { icon: PawPrint, title: { pl: 'Behawioryzm zwierzęcy', en: 'Animal behaviorism'}, text: { pl: 'Interesuję się behawioryzmem zwierzęcym i lubię obserwować zachowania zwierząt, które wykazują ich stan emocjonalny. Poza tym lubię pracować ze zwierzętami domowymi i pomagać im w nauce nowych zachowań i panowania nad emocjami.', en: 'I am interested in animal behaviorism and enjoy observing the behaviors of animals that reflect their emotional state. Additionally, I enjoy working with domestic animals and helping them learn new behaviors and manage their emotions.'} },
+  { icon: Gamepad2, title: { pl: 'Gry Komputerowe', en: 'Computer Games'}, text: { pl: 'W wolnych chwilach lubię grać w gry komputerowe i doceniam je jako formę relaksu i rozrywki. Najwięcej gram w gry RPG, MOBA i symulatory.', en: 'I like to play computer games in my free time and value them as a form of relaxation and entertainment. I mostly play RPG, MOBA, and simulation games.'} },
+  { icon: ChefHat, title: { pl: 'Gotowanie', en: 'Cooking'}, text: {pl: 'Lubię przyrządzać przeróżne potrawy i analizować jakie składniki stworzą wspólną całość. Moją ulubioną kuchnią jest kuchnia włoska.', en: 'I enjoy prepare different dishes and analyze how different ingredients come together to form a cohesive whole. My favourite cuisine is italian.'}},
+  { icon: Brain, title: { pl: 'Psychologia i Neuronauka', en: 'Psychology and Neuroscience'}, text: { pl: 'Zgłębiam wiedzę działania ludzkiego mózgu pod kątem działania mózgu jako narządu, jak i sposobu, w jaki różni ludzie myślą. Lubię analizować to co mogło skłonić człowieka do różnych działań, od problemów behawioralnych, po guzy mózgu zmieniające charakter człowieka.', en: 'I delve my knowledge on human\'s brain with a view on the brain as an organ and how different people think. I enjoy analysing what could prompt a person to a certain actions, from behavioral problems to brain tumors altering person\'s character.' }}
 ]
 
 const certificates: Array<{
@@ -760,7 +779,10 @@ function App() {
           <div className="interest-grid">
             {interests.map((item) => (
               <article className="interest-card" key={item.title[language]}>
-                <h3>{item.title[language]}</h3>
+                <h3>
+                  <item.icon className="interest-icon" aria-hidden="true" />
+                  {item.title[language]}
+                </h3>
                 <p>{item.text[language]}</p>
               </article>
             ))}

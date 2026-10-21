@@ -676,9 +676,19 @@
 }
 
 .interest-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   margin: 0 0 0.7rem;
   color: var(--text-strong);
   font-size: 1.15rem;
+}
+
+.interest-icon {
+  flex-shrink: 0;
+  width: 1.3em;
+  height: 1.3em;
+  color: var(--accent);
 }
 
 .interest-card p {
