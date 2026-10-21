@@ -11,11 +11,14 @@ import {
   CpuAi,
   EighthNotes,
   Gamepad2,
+  Menu,
   PawPrint,
   Shirt,
   Sigma,
+  X,
   type LucideIcon,
 } from 'lucide-react'
+import { GitHubIcon, KaggleIcon, LinkedInIcon } from './brandIcons'
 import profileImage from './assets/profile-photo.jpeg'
 import './App.css'
 
@@ -32,14 +35,6 @@ const SunIcon = () => (
 const MoonIcon = () => (
   <svg viewBox="0 0 24 24" className="theme-icon" aria-hidden="true">
     <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
-  </svg>
-)
-
-const PizzaIcon = () => (
-  <svg viewBox="0 0 24 24" className="pizza-icon" aria-hidden="true">
-    <path d="M12 2 3.5 18.5a2 2 0 0 0 1.9 2.9H18.6a2 2 0 0 0 1.9-2.9L12 2Z" />
-    <path d="M8 9.5h.01M12 7.5h.01M16 9.5h.01M10.5 13h.01M14.5 13h.01" />
-    <path d="M8 16.5h8" />
   </svg>
 )
 
@@ -63,9 +58,9 @@ const navigation = {
 } as const
 
 const contactLinks = [
-  { label: 'LinkedIn', value: 'linkedin.com/in/zuzux3/', href: 'https://www.linkedin.com/in/zuzux3/' },
-  { label: 'GitHub', value: 'github.com/zuzux3', href: 'https://github.com/zuzux3' },
-  { label: 'Kaggle', value: 'kaggle.com/zuzannatarazewicz', href: 'https://www.kaggle.com/zuzannatarazewicz' },
+  { label: 'LinkedIn', icon: LinkedInIcon, value: 'linkedin.com/in/zuzux3/', href: 'https://www.linkedin.com/in/zuzux3/' },
+  { label: 'GitHub', icon: GitHubIcon, value: 'github.com/zuzux3', href: 'https://github.com/zuzux3' },
+  { label: 'Kaggle', icon: KaggleIcon, value: 'kaggle.com/zuzannatarazewicz', href: 'https://www.kaggle.com/zuzannatarazewicz' },
 ]
 
 const contactRecipient = 'your-email@example.com'
@@ -586,7 +581,7 @@ function App() {
           aria-label={isMenuOpen ? 'Zamknij menu' : 'Otwórz menu'}
           aria-expanded={isMenuOpen}
         >
-          {isMenuOpen ? '✕' : <PizzaIcon />}
+          {isMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
         </button>
       )}
 
@@ -637,6 +632,21 @@ function App() {
                 <strong>Software Engineering, AI, ML, Analytics</strong>
               </li>
             </ul>
+
+            <div className="profile-links" aria-label="Social links">
+              {contactLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={link.label}
+                  title={link.label}
+                >
+                  <link.icon className="profile-link-icon" />
+                </a>
+              ))}
+            </div>
           </aside>
         </section>
 
