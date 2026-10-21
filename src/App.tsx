@@ -343,7 +343,7 @@ const projects: Array<{
 const heroStats = {
   pl: [
     { value: '3+', label: 'lata doświadczenia w IT' },
-    { value: 'Wizja Komputerowa', label: 'obszar zainteresowania' },
+    { value: 'Widzenie komputerowe', label: 'obszar zainteresowania' },
     { value: 'ML', label: 'obszar specjalizacji' },
   ],
   en: [
@@ -356,7 +356,7 @@ const heroStats = {
 const languageContent = {
   pl: {
     intro: 'Informatyka stosowana • AI & Data',
-    heading: 'Tworzę rozwiązania, modele, analitykę i rozwiązania, które łączą technologię z realnym problemem biznesowym.',
+    heading: 'Inżynier oprogramowania z doświadczeniem w uczeniu maszynowym i analizie danych.',
     summary:
       'Jestem osobą z zainteresowaniem do sztucznej inteligencji, uczenia maszynowego i analityki danych. Moje doświadczenie obejmuje prototypowanie modeli, eksplorację danych, wizualizację wyników oraz pracę nad rozwiązaniami użytecznymi w praktyce, a także szerokopojętą inżynierię oprogramowania.',
     education: 'Informatyka stosowana, specjalizacja: Data Science',
@@ -386,7 +386,7 @@ const languageContent = {
   },
   en: {
     intro: 'Applied Computer Science • AI & Data',
-    heading: 'I build solutions, models, analytics pipelines, and intelligent solutions that connect technology with real-world impact.',
+    heading: 'Software engineer with experience in machine learning and data analysis.',
     summary:
       'I am a technology-oriented professional with a strong interest in artificial intelligence, machine learning, and data-driven decision making. My work focuses on experimentation, model development, data exploration, and practical problem solving.',
     education: 'Applied Computer Science, specialization: Data Science',
@@ -409,9 +409,9 @@ const languageContent = {
     roleLabel: 'Role',
     educationLabel: 'Education',
     focusLabel: 'Focus',
-    years: 'lata doświadczenia w IT',
-    projectsCount: 'projekty',
-    focusArea: 'obszar specjalizacji',
+    years: 'years in IT',
+    projectsCount: 'projects',
+    focusArea: 'specialization area',
     profileName: 'Zuzanna Tarazewicz',
     toggle: 'Language',
   },
